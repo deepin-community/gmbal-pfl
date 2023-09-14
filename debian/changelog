@@ -1,5 +1,12 @@
-template-repository (1.0-1) unstable; urgency=medium
+gmbal-pfl (4.0.1-b003-2) unstable; urgency=medium
 
-  * Initial release
+  * Fixed the build failure with Java 11 (Closes: #909257)
+  * Standards-Version updated to 4.2.1
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 30 Nov 2018 09:02:33 +0100
+
+gmbal-pfl (4.0.1-b003-1) unstable; urgency=medium
+
+  * Initial release (Closes: #904326)
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 23 Jul 2018 12:58:45 +0200

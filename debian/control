@@ -1,15 +1,35 @@
-Source: template-repository
-Section: unknown
+Source: gmbal-pfl
+Section: java
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Emmanuel Bourg <ebourg@apache.org>
+Build-Depends:
+ debhelper (>= 11),
+ default-jdk,
+ libgeronimo-ejb-3.2-spec-java,
+ libmaven-antrun-plugin-java,
+ libmaven-bundle-plugin-java,
+ libmaven-source-plugin-java,
+ maven-debian-helper (>= 2.1)
+Standards-Version: 4.2.1
+Vcs-Git: https://salsa.debian.org/java-team/gmbal-pfl.git
+Vcs-Browser: https://salsa.debian.org/java-team/gmbal-pfl
+Homepage: https://javaee.github.io/gmbal-pfl/
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libgmbal-pfl-java
+Architecture: all
+Depends: ${maven:Depends}, ${misc:Depends}
+Suggests: ${maven:OptionalDepends}
+Description: GlassFish MBean Annotation Library (Primitive Function Library)
+ The GlassFish MBean Annotation Library (gmbal, pronounced as in "gumball")
+ is a runtime annotation processor that creates Open MBeans. This is useful
+ for creating a management API for existing code with minimal effort. It is
+ intended to be applied to existing modules (which may be OSGi bundles in
+ GlassFish v3, or any other packaging model including standard jar files),
+ but could be used anywhere that it is desired to combine the definition of
+ the management API with the module API and implementation.
+ .
+ Gmbal is not limited to use in GlassFish. Gmbal is completely independent
+ of GlassFish, and may be used in a context where GlassFish is not present.
+ .
+ This package contains the Primitive Function Library used by Gmbal (PFL)
