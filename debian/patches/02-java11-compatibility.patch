@@ -1,0 +1,19 @@
+Description: Fixes the compatibility with Java 11
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: no
+--- a/pfl-basic/src/main/java/org/glassfish/pfl/basic/reflection/BridgeBase.java
++++ b/pfl-basic/src/main/java/org/glassfish/pfl/basic/reflection/BridgeBase.java
+@@ -264,7 +264,12 @@
+      * @param protectionDomain the domain in which the class should be defined
+      */
+     public final Class<?> defineClass(String className, byte[] classBytes, ClassLoader classLoader, ProtectionDomain protectionDomain) {
+-        return unsafe.defineClass(className, classBytes, 0, classBytes.length, classLoader, null);
++        try {
++            Method defineClass = unsafe.getClass().getMethod("defineClass", new Class[]{String.class, byte[].class, int.class, int.class, ClassLoader.class, ProtectionDomain.class});
++            return (Class) defineClass.invoke(unsafe, className, classBytes, 0, classBytes.length, classLoader, null);
++        } catch (Exception e) {
++            throw new RuntimeException(e.getMessage(), e);
++        }
+     }
+ 
+     /**

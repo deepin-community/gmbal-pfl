@@ -1,0 +1,53 @@
+Description: Change the packaging from 'bundle' to 'jar' to avoid dependency resolution issues
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+--- a/pfl-asm/pom.xml
++++ b/pfl-asm/pom.xml
+@@ -50,7 +50,6 @@
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+     <artifactId>pfl-asm</artifactId>
+-    <packaging>bundle</packaging>
+     <name>PFL ASM</name>
+     <build>
+         <plugins>
+--- a/pfl-basic-tools/pom.xml
++++ b/pfl-basic-tools/pom.xml
+@@ -50,7 +50,6 @@
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+     <artifactId>pfl-basic-tools</artifactId>
+-    <packaging>bundle</packaging>
+     <name>PFL Basic Tools</name>
+     <dependencies>
+         <dependency>
+--- a/pfl-test/pom.xml
++++ b/pfl-test/pom.xml
+@@ -49,7 +49,6 @@
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+     <artifactId>pfl-test</artifactId>
+-    <packaging>bundle</packaging>
+     <name>PFL Test</name>
+     <dependencies>
+         <dependency>
+--- a/pfl-tf-tools/pom.xml
++++ b/pfl-tf-tools/pom.xml
+@@ -49,7 +49,6 @@
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+     <artifactId>pfl-tf-tools</artifactId>
+-    <packaging>bundle</packaging>
+     <name>PFL TF TOOLS</name>
+     <dependencies>
+ 
+--- a/pfl-tf/pom.xml
++++ b/pfl-tf/pom.xml
+@@ -49,7 +49,6 @@
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+     <artifactId>pfl-tf</artifactId>
+-    <packaging>bundle</packaging>
+     <name>PFL TF</name>
+     <dependencies>
+         <dependency>
